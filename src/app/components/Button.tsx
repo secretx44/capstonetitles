@@ -1,12 +1,22 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
+import LoadingButton from '@mui/lab/LoadingButton';
 import { Box } from '@mui/material';
+
 export default function NextButton(props: {
     onClick: () => void;
+    loading: boolean;
 }) {
     return (
-        <Box sx={{mt: 3}}>
-            <Button variant="contained" onClick={props.onClick}>Generate a new Title</Button>
+        <Box sx={{my: 3}}>
+            <LoadingButton
+                size="small"
+                onClick={props.onClick}
+                loading={props.loading}
+                loadingIndicator="Loading…"
+                variant="contained"
+            >
+                Generate a new Title
+            </LoadingButton>
         </Box>
     )
 }

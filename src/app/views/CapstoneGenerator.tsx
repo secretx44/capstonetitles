@@ -6,6 +6,7 @@ import { randomTitles } from "../api/randomTitles";
 import RandomTitle from "../components/RandomTitle";
 import SkeletonTitle from "../components/skeleton/SkeletonTitle"; 
 import { Box, Typography, Fade } from "@mui/material";
+import Title from "../components/Title";
 
 export default function CapstoneGenerator() {
   const [title, setTitle] = useState<string>("");
@@ -27,15 +28,13 @@ export default function CapstoneGenerator() {
   const handleNextTitle = () => {
     setIsLoading(true);
     setAnimateTitle(false);
-    setTitle(""); // Reset the title
-    setTimeout(generateTitle, 500); // Wait for animation to complete before generating new title
+    setTitle("");
+    setTimeout(generateTitle, 500); 
   };
 
   return (
-    <Box sx={{ textAlign: "center" }} component="div">
-      <Typography sx={{ color: "black" }} variant="h4" component="h4">
-        Capstone Title Generator
-      </Typography>
+    <Box sx={{ textAlign: "center", minHeight: 200 }} component="div">
+      <Title/>
       <Typography
         variant="subtitle1"
         component="span"
@@ -45,6 +44,7 @@ export default function CapstoneGenerator() {
         a guide or source of inspiration. At the moment, majors in computer
         science, information technology and related fields, are the target audience for the created titles.
       </Typography>
+      <NextButton onClick={handleNextTitle} loading={isLoading} />
       {isLoading ? (
         <SkeletonTitle />
       ) : (
@@ -54,7 +54,6 @@ export default function CapstoneGenerator() {
           </div>
         </Fade>
       )}
-      <NextButton onClick={handleNextTitle} />
     </Box>
   );
 }
