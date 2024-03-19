@@ -42,7 +42,6 @@ export default function CapstoneGenerator() {
         textAlign: "center",
         minHeight: 200,
         maxWidth: isMobile ? 300 : "none",
-        padding: isMobile ? 0 : 9,
         my: 3,
         mx: "auto",
       }}
@@ -52,7 +51,7 @@ export default function CapstoneGenerator() {
       <Typography
         variant="subtitle1"
         component="span"
-        sx={{ color: "#121212", display: "flex", textAlign: "center", fontWeight: "bold", my: 3, maxWidth: 900, mx: "auto"}}
+        sx={{ color: "#121212", display: "flex", textAlign: "justify", fontWeight: "bold", my: 3, maxWidth: 900, mx: "auto"}}
       >
         This basic project tool will assist other students studying information
         technology, computer science, or any related discipline in coming up

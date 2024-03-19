@@ -4,13 +4,11 @@ import { Box, Button, Card, CardContent, Typography, Alert, CardActions} from "@
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import CheckIcon from '@mui/icons-material/Check';
 
-export default function RandomTitle(props: {
-    contentTitle: string
-}) {
+export default function RandomTitle({contentTitle}: {contentTitle: string}) {
     const [copied, setCopied] = useState(false);
 
     const copyToClipboard = () => {
-        navigator.clipboard.writeText(props.contentTitle);
+        navigator.clipboard.writeText(contentTitle);
         setCopied(true);
     };
 
@@ -22,7 +20,6 @@ export default function RandomTitle(props: {
 
 theme.typography.subtitle1 = {
   color: "#121212",
-  fontFamily: "Roboto",
   fontSize: "1.2rem",
   "@media (min-width:600px)": {
     fontSize: "1rem",
@@ -46,7 +43,7 @@ theme.typography.subtitle1 = {
                 </CardActions>
                 <CardContent sx={{textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center', height: 'auto'}}>
                     <Typography variant="subtitle1" component="span">
-                    {props.contentTitle}
+                    {contentTitle}
                     </Typography>
                 </CardContent>
             </Card>

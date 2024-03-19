@@ -5,8 +5,6 @@ import Typography from "@mui/material/Typography";
 const theme = createTheme();
 
 theme.typography.h2 = {
-  color: "#121212",
-  fontFamily: "Roboto",
   fontSize: "1.5rem",
   "@media (min-width:600px)": {
     fontSize: "2rem",
@@ -22,7 +20,13 @@ theme.typography.h2 = {
 export default function Title() {
   return (
     <ThemeProvider theme={theme}>
-      <Typography variant="h2">Capstone Title Generator</Typography>
+      <Typography variant="h2"
+        sx={{
+          backgroundImage: "linear-gradient(to right, #121212, #e21a1a)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        }}
+      >Capstone Title Generator</Typography>
     </ThemeProvider>
   );
 }
